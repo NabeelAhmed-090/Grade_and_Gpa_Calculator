@@ -31,16 +31,16 @@ const Grade = () => {
         <div style={{ marginTop: "150px" }}>
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container style={containerStyle}>
-                    <Grid item xs={5}></Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={3}></Grid>
+                    <Grid style={{ textAlign: "center" }} item xs={6}>
                         <CustomizedInputs value={average} onChange={handleOnChangeAverage} text="Enter Average" />
                     </Grid>
                 </Grid>
             </Box>
             <Box style={rowStyle} sx={{ flexGrow: 1 }}>
                 <Grid container style={containerStyle}>
-                    <Grid item xs={5}></Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={3}></Grid>
+                    <Grid style={{ textAlign: "center" }} item xs={6}>
                         <CustomizedInputs value={score} onChange={handleOnChangeScore} text="Your Score" />
                     </Grid>
                 </Grid>

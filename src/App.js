@@ -1,17 +1,24 @@
-
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import Grade from './components/Grade';
+import SGPA from './components/SGPA';
+import CGPA from './components/CGPA';
 import Header from './components/Header';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 //  color: "#45a29e"
-function App() {
+const App = () => {
   return (
-    <main style={mainStyle}>
-      <div>
-        <Header />
-      </div>
-      <Grade />
-    </main >
+    <Router>
+      <main style={mainStyle}>
+        <div>
+          <Header />
+        </div>
+
+        <Route path='/' component={Grade} exact />
+        <Route path='/SGPA' component={SGPA} />
+        <Route path='/CGPA' component={CGPA} />
+
+      </main >
+    </Router>
   );
 }
 
@@ -21,4 +28,5 @@ const mainStyle = {
 }
 
 export default App;
+
 
