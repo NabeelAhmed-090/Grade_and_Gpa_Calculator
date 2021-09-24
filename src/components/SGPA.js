@@ -5,8 +5,7 @@ import { useState, useEffect } from 'react'
 
 import CustomizedCH from './CutomizedCH';
 import CustomizedGrade from './CustomizedGrade';
-import { color } from '@mui/system';
-
+import CustomizedInputs from './CustomizedInputs';
 
 
 const SGPA = () => {
@@ -16,11 +15,9 @@ const SGPA = () => {
 
 
     const updateSGPA = () => {
-        console.log("entered")
         var val = 0;
         var count = 0;
         for (var i = 0; i < 10; i++) {
-            console.log(grade[i], credit[i])
             const grd = grade[i];
             const crd = credit[i];
             if (grd !== -1 && crd !== 0) {
@@ -30,25 +27,25 @@ const SGPA = () => {
             }
         }
         if (count !== 0) {
-            setSGPA(val / count);
+            setSGPA((val / count).toFixed(2));
         }
+        console.log(sgpa)
     }
 
+    useEffect(() => {
+        updateSGPA()
+    }, [credit, grade]);
 
     const HandleCHChange = (id, event) => {
         const credits = [...credit]
         credits[Number(id)] = event.target.value
         setCredit(credits)
-        // useEffect(() => {
-        //     updateSGPA()
-        // }, credit);
     }
 
     const handleGradeChange = (id, event) => {
         const tempArr = [...grade]
         tempArr[Number(id)] = event.target.value
         setGrade(tempArr)
-        updateSGPA();
     }
 
     return (
@@ -71,7 +68,8 @@ const SGPA = () => {
                     <Grid style={firstCol} item xs={3}>
                         <CustomizedCH value={credit[0]} onChange={HandleCHChange.bind(null, "0")} />
                     </Grid>
-                    <Grid item xs={5}></Grid>
+                    <Grid item xs={5}>
+                    </Grid>
                     <Grid style={thirdCol} item xs={2}>
                         <CustomizedGrade value={grade[0]} onChange={handleGradeChange.bind(null, "0")} />
                     </Grid>
@@ -199,7 +197,8 @@ const containerStyle = {
 
 const firstCol = {
     textAlign: "right",
-    marginLeft: "3%"
+    marginLeft: "3%",
+    marginTop: "1%"
 }
 
 const secondCol = {
@@ -207,6 +206,7 @@ const secondCol = {
 }
 
 const thirdCol = {
-    marginLeft: "1%"
+    marginLeft: "1%",
+    marginTop: "1%"
 }
 export default SGPA

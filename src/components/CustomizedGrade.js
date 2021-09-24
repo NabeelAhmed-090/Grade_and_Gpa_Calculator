@@ -62,8 +62,7 @@ function CustomizedCH(props) {
 
             <MenuItem value={3.33}>B+</MenuItem>
             <MenuItem value={3.67}>A-</MenuItem>
-            <MenuItem value={4}>A</MenuItem>
-            <MenuItem value={4}>A+</MenuItem>
+            <MenuItem value={4}>A / A+</MenuItem>
         </Select>
     );
 }
