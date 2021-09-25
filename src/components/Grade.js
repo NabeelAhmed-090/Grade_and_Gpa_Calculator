@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import CustomizedInputs from './CustomizedInputs';
 import { getGrade } from './function'
 import { Avatar } from '@mui/material';
+import { CircularProgress } from '@mui/material';
 
 
 const Grade = () => {
@@ -76,18 +77,18 @@ const Grade = () => {
                 <Grid container style={containerStyle}>
                     <Grid item style={{ marginLeft: "4%" }} xs={3}></Grid>
                     <Grid item xs={5}>
-                        <Avatar sx={avatarStyle}>{grade[0]}</Avatar>
+                        <Avatar sx={avatarStyle}>{grade[0] === '?' ? <CircularProgress /> : grade[0]}</Avatar>
                     </Grid>
                 </Grid>
             </Box>
             <Box style={{ marginTop: "60px", alignItems: "center" }} sx={{ flexGrow: 1 }}>
                 <Grid container style={containerStyle}>
                     <Grid className="Avatar" display="flex" alignItems="right" justifyContent="right" item xs={4}>
-                        <Avatar sx={avatarStyle_1}>{grade[1]}</Avatar>
+                        <Avatar sx={avatarStyle_1}>{grade[2] === '?' ? <CircularProgress /> : grade[1]}</Avatar>
                     </Grid>
                     <Grid item xs={4}></Grid>
                     <Grid className="Avatar" display="flex" alignItems="left" justifyContent="left" item xs={4}>
-                        <Avatar sx={avatarStyle_1}>{grade[2]}</Avatar>
+                        <Avatar sx={avatarStyle_1}>{grade[1] === '?' ? <CircularProgress /> : grade[2]}</Avatar>
                     </Grid>
                 </Grid>
             </Box>

@@ -8,6 +8,9 @@ const styles = {
         "& label": {
             color: "white"
         },
+        multilineColor: {
+            color: "white"
+        },
         "& label.Mui-focused": {
             color: focusedColor
         },
@@ -25,13 +28,16 @@ const styles = {
                 borderColor: focusedColor
             }
         },
-        borderBottom: "1px solid white"
+        "& .MuiInputBase-input": {
+            color: "white"
+        },
+        borderBottom: "1px solid white",
+        color: "white",
     },
     input: {
         color: "white",
-        widht: "15vh",
+        widht: "14vh",
         boxShadow: "0 6px 6px -6px #ccc"
-        // boxShadow: "0 0 2px -2px #ccc"
     }
 
 };
@@ -41,7 +47,6 @@ function CustomizedInputs(props) {
 
     return (
         <TextField
-            maxLength="3"
             className={classes.root}
             InputProps={{
                 className: classes.input,

@@ -8,37 +8,37 @@ import '../globalStyle.css'
 
 
 const Header = () => {
-    const [grade, setGrade] = useState('ActiveLink')
-    const [sgpa, setSgpa] = useState('NonActiveLink')
-    const [cgpa, setCgpa] = useState('NonActiveLink')
+    const [grade, setGrade] = useState(true)
+    const [sgpa, setSgpa] = useState(false)
+    const [cgpa, setCgpa] = useState(false)
 
     const updateGrade = () => {
-        setGrade("ActiveLink")
-        setSgpa("NonActiveLink")
-        setCgpa("NonActiveLink")
+        setGrade(true)
+        setSgpa(false)
+        setCgpa(false)
     }
     const updateSgpa = () => {
-        setGrade("NonActiveLink")
-        setSgpa("ActiveLink")
-        setCgpa("NonActiveLink")
+        setGrade(false)
+        setSgpa(true)
+        setCgpa(false)
     }
     const updateCgpa = () => {
-        setGrade("NonActiveLink")
-        setSgpa("NonActiveLink")
-        setCgpa("ActiveLink")
+        setGrade(false)
+        setSgpa(false)
+        setCgpa(true)
     }
     return (
         <>
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container>
                     <Grid style={firstCol} item xs={3}>
-                        <Link style={grade === "ActiveLink" ? ActiveLink : NonActivelink} onClick={updateGrade} to="/">Grade</Link>
+                        <Link style={grade ? ActiveLink : NonActivelink} onClick={updateGrade} to="/">Grade</Link>
                     </Grid>
                     <Grid style={secondCol} item xs={5}>
-                        <Link style={sgpa === "ActiveLink" ? ActiveLink : NonActivelink} onClick={updateSgpa} to="/SGPA">SGPA</Link>
+                        <Link style={sgpa ? ActiveLink : NonActivelink} onClick={updateSgpa} to="/SGPA">SGPA</Link>
                     </Grid>
                     <Grid style={thirdCol} item xs={2}>
-                        <Link style={cgpa === "ActiveLink" ? ActiveLink : NonActivelink} onClick={updateCgpa} to="/CGPA">CGPA</Link>
+                        <Link style={cgpa ? ActiveLink : NonActivelink} onClick={updateCgpa} to="/CGPA">CGPA</Link>
                     </Grid>
                 </Grid>
             </Box>
