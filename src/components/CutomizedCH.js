@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import { Select } from "@material-ui/core";
 import { MenuItem } from "@mui/material";
-import React, { useState } from 'react'
+import React from 'react'
 import '../globalStyle.css'
 
 const focusedColor = "#66fcf1"
@@ -31,7 +31,8 @@ const styles = {
             }
         },
         borderBottom: "1px solid white",
-        width: "15vh"
+        width: "12vh",
+        marginTop: "0%"
     },
 };
 

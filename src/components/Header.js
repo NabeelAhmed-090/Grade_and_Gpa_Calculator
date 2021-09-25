@@ -6,19 +6,29 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
     return (
-        <Box sx={{ flexGrow: 1 }}>
-            <Grid container>
-                <Grid style={firstCol} item xs={3}>
-                    <Link style={linkStyles} to="/">Grade</Link>
+        <>
+            <Box sx={{ flexGrow: 1 }}>
+                <Grid container>
+                    <Grid style={firstCol} item xs={3}>
+                        <Link style={linkStyles} to="/">Grade</Link>
+                    </Grid>
+                    <Grid style={secondCol} item xs={5}>
+                        <Link style={linkStyles} to="/SGPA">SGPA</Link>
+                    </Grid>
+                    <Grid style={thirdCol} item xs={2}>
+                        <Link style={linkStyles} to="/CGPA">CGPA</Link>
+                    </Grid>
                 </Grid>
-                <Grid style={secondCol} item xs={5}>
-                    <Link style={linkStyles} to="/SGPA">SGPA</Link>
+            </Box>
+            <Box style={{ marginTop: "5%" }} sx={{ flexGrow: 1 }}>
+                <Grid container>
+                    <Grid item xs={2}></Grid>
+                    <Grid item xs={8}>
+                        <hr style={{ border: "0.25px solid #66fcf1" }} />
+                    </Grid>
                 </Grid>
-                <Grid style={thirdCol} item xs={2}>
-                    <Link style={linkStyles} to="/CGPA">CGPA</Link>
-                </Grid>
-            </Grid>
-        </Box>
+            </Box>
+        </>
     )
 }
 

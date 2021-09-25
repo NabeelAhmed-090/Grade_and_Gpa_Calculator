@@ -23,7 +23,7 @@ const createData = () => {
         x[i][1] = 'C+'
         x[i][2] = "29"
         for (var j = 3; j < 12; j++) {
-            if ((i === 31 || i === 32) && (j >= 3 && j <= 6) ||
+            if (((i === 31 || i === 32) && (j >= 3 && j <= 6)) ||
                 ((i >= 33 && i <= 37) && (j >= 3 && j <= 5)) ||
                 ((i >= 38 && i <= 42) && (j === 3 | j === 4)) ||
                 ((i >= 43 && i <= 47) && (j === 3))) {
@@ -78,7 +78,7 @@ const createData = () => {
 
     for (i = 51; i <= 64; i++) {
         x[i][0] = String(i)
-        x[i][1] = 'B'
+        x[i][1] = 'B-'
         for (j = 2; j < 14; j++) {
             if (j === 2 && (i >= 51 && i <= 57)) {
                 x[i][j] = "29"
@@ -93,7 +93,7 @@ const createData = () => {
                 x[i][j] = "30"
             }
             else {
-                var temp = Number(x[i - 1][j])
+                temp = Number(x[i - 1][j])
                 temp++;
                 x[i][j] = String(temp)
             }
@@ -115,9 +115,9 @@ const createData = () => {
     x[65][12] = "78"
     x[65][13] = "83"
 
-    for (i = 65; i <= 91; i++) {
+    for (i = 66; i <= 91; i++) {
         x[i][0] = String(i)
-        x[i][1] = '0'
+        x[i][1] = 'B'
         for (j = 2; j < 14; j++) {
             if ((i >= 81) && (j === 2 || j === 3)) {
                 if (j === 2) {
@@ -150,7 +150,7 @@ const createData = () => {
 
             else {
 
-                var temp = Number(x[i - 1][j])
+                temp = Number(x[i - 1][j])
                 temp++;
                 x[i][j] = String(temp)
             }
@@ -195,30 +195,93 @@ const getLetter = (index) => {
     }
 }
 
-const print = () => {
-    var x = createData()
-    for (var i = 30; i < 92; i++) {
-        console.log(x[i])
-    }
-}
+export const getGrade = (mca, score, setGrade) => {
+    var check = false
+    var s = Number(score)
+    var ret = ['?', '?', '?']
+    var x = (createData())[mca]
+    var j = 0
 
-export const getGrade = (mca, score) => {
-    console.log(mca, score)
-    var x = createData()
-
-    if (Number(x[mca][2]) >= score) {
-        return 'F'
+    if (mca < 30 || mca > 91) {
+        setGrade(ret)
+        return
     }
-    for (var i = 3; i < 14; i++) {
-        console.log(x[mca][i])
-        if (x[mca][i] !== "0") {
-            if (Number(x[mca][i]) > score) {
-                return getLetter(i - 1)
+    if (s < 30) {
+        ret[0] = `F ${score}`
+        ret[1] = "-"
+        j = 3
+        while (x[j] === "0") {
+            j++
+        }
+        ret[2] = getLetter(j) + " " + x[j]
+        setGrade(ret)
+        return
+    }
+
+    if (Number(x[2]) > s) {
+        ret[1] = `F ${score}`
+        ret[0] = "-"
+        j = 3
+        while (x[j] === '0') {
+            j++
+        }
+        ret[2] = getLetter(j) + " " + x[j]
+        check = true
+    }
+    else {
+        for (var i = 3; i < 14; i++) {
+            if (x[i] === '0') {
+                continue
+            }
+            if (Number(x[i]) === s) {
+                ret[0] = getLetter(i) + " " + score
+                if (i === 3) {
+                    ret[1] = "-"
+                }
+                else {
+                    j = i - 1
+                    while (x[j] === '0') {
+                        j--
+                    }
+                    ret[1] = getLetter(j) + " " + x[j]
+                }
+                if (i === 13) {
+                    ret[2] = "-"
+                }
+                else {
+                    j = i + 1
+                    while (j === '0') {
+                        j++
+                    }
+                    ret[2] = getLetter(j) + " " + x[j]
+                }
+                check = true
+                break
+            }
+            if (Number(x[i]) > s) {
+                ret[0] = getLetter(i - 1) + " " + score
+
+                j = i - 2
+                while (x[j] === '0' && j > 2) {
+                    j--
+                }
+                if (j === 2) {
+                    ret[1] = `F ${x[2]}`
+                }
+                ret[1] = getLetter(j) + " " + x[j]
+
+                ret[2] = getLetter(i) + " " + x[i]
+                check = true
+                break
             }
         }
     }
-    return 'A+'
-
+    if (check === false) {
+        ret[0] = `A+ ${score}`
+        ret[1] = `A ${x[12]}`
+        ret[2] = "-"
+    }
+    setGrade(ret)
 }
 
 

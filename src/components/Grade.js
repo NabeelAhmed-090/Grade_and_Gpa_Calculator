@@ -9,20 +9,20 @@ import { Avatar } from '@mui/material';
 const Grade = () => {
     const [average, setAverage] = useState('')
     const [score, setScore] = useState('')
-    const [grade, setGrade] = useState('?')
+    const [grade, setGrade] = useState(['?', '?', '?'])
 
-    const updateGrade = () => {
-        console.log(average, score)
-        if (average !== '' && score !== '') {
-            var x = getGrade(Number(average), Number(score))
-            setGrade(x)
-        }
-        else {
-            setGrade('?')
-        }
-    }
+
 
     useEffect(() => {
+        const updateGrade = () => {
+            var ret = ['-', '-', '-']
+            if (average !== '' && score !== '') {
+                ret = getGrade(average, score, setGrade)
+            }
+            else {
+                setGrade(ret)
+            }
+        }
         updateGrade()
     }, [average, score]);
 
@@ -45,7 +45,7 @@ const Grade = () => {
     }
 
     return (
-        <div style={{ marginTop: "150px" }}>
+        <div style={{ marginTop: "100px" }}>
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container style={containerStyle}>
                     <Grid item xs={3}></Grid>
@@ -62,11 +62,32 @@ const Grade = () => {
                     </Grid>
                 </Grid>
             </Box>
-            <Box style={{ marginTop: "100px", alignItems: "center" }} sx={{ flexGrow: 1 }}>
+
+            <Box style={{ marginTop: "100px" }} sx={{ flexGrow: 1 }}>
+                <Grid container style={containerStyle}>
+                    <Grid item xs={2}></Grid>
+                    <Grid item xs={8}>
+                        <hr style={{ border: "0.25px solid #66fcf1" }} />
+                    </Grid>
+                </Grid>
+            </Box>
+
+            <Box style={{ marginTop: "60px", alignItems: "center" }} sx={{ flexGrow: 1 }}>
                 <Grid container style={containerStyle}>
                     <Grid item style={{ marginLeft: "4%" }} xs={3}></Grid>
-                    <Grid style={{ border: "1px solid white" }} item xs={5}>
-                        <Avatar sx={{ bgcolor: "white", color: "black", margin: "auto", padding: "1px" }}>{grade}</Avatar>
+                    <Grid item xs={5}>
+                        <Avatar sx={avatarStyle}>{grade[0]}</Avatar>
+                    </Grid>
+                </Grid>
+            </Box>
+            <Box style={{ marginTop: "60px", alignItems: "center" }} sx={{ flexGrow: 1 }}>
+                <Grid container style={containerStyle}>
+                    <Grid className="Avatar" display="flex" alignItems="right" justifyContent="right" item xs={4}>
+                        <Avatar sx={avatarStyle_1}>{grade[1]}</Avatar>
+                    </Grid>
+                    <Grid item xs={4}></Grid>
+                    <Grid className="Avatar" display="flex" alignItems="left" justifyContent="left" item xs={4}>
+                        <Avatar sx={avatarStyle_1}>{grade[2]}</Avatar>
                     </Grid>
                 </Grid>
             </Box>
@@ -74,6 +95,24 @@ const Grade = () => {
     )
 }
 
+const avatarStyle = {
+    bgcolor: "white",
+    margin: "auto",
+    padding: "1px",
+    width: "65px",
+    height: "65px",
+    color: "#66fcf1",
+    fontWeight: "1000"
+}
+
+const avatarStyle_1 = {
+    bgcolor: "white",
+    padding: "1px",
+    width: "65px",
+    height: "65px",
+    color: "#66fcf1",
+    fontWeight: "700"
+}
 
 const rowStyle = {
     marginTop: "7%"

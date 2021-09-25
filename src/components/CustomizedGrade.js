@@ -11,9 +11,6 @@ const styles = {
         "& label": {
             color: "white"
         },
-        "& label": {
-            color: "white"
-        },
         "& label.Mui-focused": {
             color: focusedColor
         },
@@ -32,7 +29,7 @@ const styles = {
             }
         },
         borderBottom: "1px solid white",
-        width: "15vh"
+        width: "12vh"
     },
 };
 
@@ -41,6 +38,7 @@ function CustomizedCH(props) {
 
     return (
         <Select
+            key={props.id}
             onChange={props.onChange}
             className={classes.root}
             labelId="demo-simple-select-label"

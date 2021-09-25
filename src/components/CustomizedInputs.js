@@ -28,8 +28,10 @@ const styles = {
         borderBottom: "1px solid white"
     },
     input: {
-        color: "white"
-    }
+        color: "white",
+        // width: "25vh",
+    },
+
 };
 
 function CustomizedInputs(props) {
@@ -37,9 +39,10 @@ function CustomizedInputs(props) {
 
     return (
         <TextField
+            maxLength="3"
             className={classes.root}
             InputProps={{
-                className: classes.input
+                className: classes.input,
             }}
             value={props.value}
             onChange={props.onChange}
