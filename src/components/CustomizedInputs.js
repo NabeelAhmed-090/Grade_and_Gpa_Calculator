@@ -29,8 +29,10 @@ const styles = {
     },
     input: {
         color: "white",
-        // width: "25vh",
-    },
+        widht: "15vh",
+        boxShadow: "0 6px 6px -6px #ccc"
+        // boxShadow: "0 0 2px -2px #ccc"
+    }
 
 };
 

@@ -5,7 +5,8 @@ import { useState, useEffect } from 'react'
 import { Avatar } from '@mui/material';
 import CustomizedCH from './CutomizedCH';
 import CustomizedGrade from './CustomizedGrade';
-
+import CustomizedBox from './CustomizedBox'
+import CustomizedInputs from './CustomizedInputs';
 
 const SGPA = () => {
     const [credit, setCredit] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
@@ -47,7 +48,6 @@ const SGPA = () => {
 
     return (
         <div style={{ marginTop: "50px" }}>
-
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container style={containerStyle}>
                     <Grid style={firstCol} item xs={3}></Grid>
@@ -57,127 +57,16 @@ const SGPA = () => {
 
                 </Grid>
             </Box>
-
-            <Box style={boxStyle} sx={{ flexGrow: 1 }}>
-                <Grid container style={containerStyle}>
-                    <Grid style={firstCol} item xs={3}>
-                        <CustomizedCH value={credit[0]} onChange={HandleCHChange.bind(null, "0")} />
-                    </Grid>
-                    <Grid item xs={5}>
-                    </Grid>
-                    <Grid style={thirdCol} item xs={2}>
-                        <CustomizedGrade id="0" value={grade[0]} onChange={handleGradeChange.bind(null, "0")} />
-                    </Grid>
-                </Grid>
-            </Box>
-
-            <Box style={boxStyle} sx={{ flexGrow: 1 }}>
-                <Grid container style={containerStyle}>
-                    <Grid style={firstCol} item xs={3}>
-                        <CustomizedCH value={credit[1]} onChange={HandleCHChange.bind(null, "1")} />
-                    </Grid>
-                    <Grid item xs={5}></Grid>
-                    <Grid style={thirdCol} item xs={2}>
-                        <CustomizedGrade id="1" value={grade[1]} onChange={handleGradeChange.bind(null, "1")} />
-                    </Grid>
-                </Grid>
-            </Box>
-
-            <Box style={boxStyle} sx={{ flexGrow: 1 }}>
-                <Grid container style={containerStyle}>
-                    <Grid style={firstCol} item xs={3}>
-                        <CustomizedCH value={credit[2]} onChange={HandleCHChange.bind(null, "2")} />
-                    </Grid>
-                    <Grid item xs={5}></Grid>
-                    <Grid style={thirdCol} item xs={2}>
-                        <CustomizedGrade id="2" value={grade[2]} onChange={handleGradeChange.bind(null, "2")} />
-                    </Grid>
-                </Grid>
-            </Box>
-
-            <Box style={boxStyle} sx={{ flexGrow: 1 }}>
-                <Grid container style={containerStyle}>
-                    <Grid style={firstCol} item xs={3}>
-                        <CustomizedCH value={credit[3]} onChange={HandleCHChange.bind(null, "3")} />
-                    </Grid>
-                    <Grid item xs={5}></Grid>
-                    <Grid style={thirdCol} item xs={2}>
-                        <CustomizedGrade id="3" value={grade[3]} onChange={handleGradeChange.bind(null, "3")} />
-                    </Grid>
-                </Grid>
-            </Box>
-
-            <Box style={boxStyle} sx={{ flexGrow: 1 }}>
-                <Grid container style={containerStyle}>
-                    <Grid style={firstCol} item xs={3}>
-                        <CustomizedCH value={credit[4]} onChange={HandleCHChange.bind(null, "4")} />
-                    </Grid>
-                    <Grid item xs={5}></Grid>
-                    <Grid style={thirdCol} item xs={2}>
-                        <CustomizedGrade id="4" value={grade[4]} onChange={handleGradeChange.bind(null, "4")} />
-                    </Grid>
-                </Grid>
-            </Box>
-
-            <Box style={boxStyle} sx={{ flexGrow: 1 }}>
-                <Grid container style={containerStyle}>
-                    <Grid style={firstCol} item xs={3}>
-                        <CustomizedCH value={credit[5]} onChange={HandleCHChange.bind(null, "5")} />
-                    </Grid>
-                    <Grid item xs={5}></Grid>
-                    <Grid style={thirdCol} item xs={2}>
-                        <CustomizedGrade id="5" value={grade[5]} onChange={handleGradeChange.bind(null, "5")} />
-                    </Grid>
-                </Grid>
-            </Box>
-
-            <Box style={boxStyle} sx={{ flexGrow: 1 }}>
-                <Grid container style={containerStyle}>
-                    <Grid style={firstCol} item xs={3}>
-                        <CustomizedCH value={credit[6]} onChange={HandleCHChange.bind(null, "6")} />
-                    </Grid>
-                    <Grid item xs={5}></Grid>
-                    <Grid style={thirdCol} item xs={2}>
-                        <CustomizedGrade id="6" value={grade[6]} onChange={handleGradeChange.bind(null, "6")} />
-                    </Grid>
-                </Grid>
-            </Box>
-
-            <Box style={boxStyle} sx={{ flexGrow: 1 }}>
-                <Grid container style={containerStyle}>
-                    <Grid style={firstCol} item xs={3}>
-                        <CustomizedCH value={credit[7]} onChange={HandleCHChange.bind(null, "7")} />
-                    </Grid>
-                    <Grid item xs={5}></Grid>
-                    <Grid style={thirdCol} item xs={2}>
-                        <CustomizedGrade id="7" value={grade[7]} onChange={handleGradeChange.bind(null, "7")} />
-                    </Grid>
-                </Grid>
-            </Box>
-
-            <Box style={boxStyle} sx={{ flexGrow: 1 }}>
-                <Grid container style={containerStyle}>
-                    <Grid style={firstCol} item xs={3}>
-                        <CustomizedCH value={credit[8]} onChange={HandleCHChange.bind(null, "8")} />
-                    </Grid>
-                    <Grid item xs={5}></Grid>
-                    <Grid style={thirdCol} item xs={2}>
-                        <CustomizedGrade id="8" value={grade[8]} onChange={handleGradeChange.bind(null, "8")} />
-                    </Grid>
-                </Grid>
-            </Box>
-
-            <Box style={boxStyle} sx={{ flexGrow: 1 }}>
-                <Grid container style={containerStyle}>
-                    <Grid style={firstCol} item xs={3}>
-                        <CustomizedCH value={credit[9]} onChange={HandleCHChange.bind(null, "9")} />
-                    </Grid>
-                    <Grid item xs={5}></Grid>
-                    <Grid style={thirdCol} item xs={2}>
-                        <CustomizedGrade id="9" value={grade[9]} onChange={handleGradeChange.bind(null, "9")} />
-                    </Grid>
-                </Grid>
-            </Box>
+            <CustomizedBox credit={credit[0]} grade={grade[0]} id="0" HandleCHChange={HandleCHChange.bind(null, "0")} handleGradeChange={handleGradeChange.bind(null, "0")} />
+            <CustomizedBox credit={credit[1]} grade={grade[1]} id="1" HandleCHChange={HandleCHChange.bind(null, "1")} handleGradeChange={handleGradeChange.bind(null, "1")} />
+            <CustomizedBox credit={credit[2]} grade={grade[2]} id="2" HandleCHChange={HandleCHChange.bind(null, "2")} handleGradeChange={handleGradeChange.bind(null, "2")} />
+            <CustomizedBox credit={credit[3]} grade={grade[3]} id="3" HandleCHChange={HandleCHChange.bind(null, "3")} handleGradeChange={handleGradeChange.bind(null, "3")} />
+            <CustomizedBox credit={credit[4]} grade={grade[4]} id="4" HandleCHChange={HandleCHChange.bind(null, "4")} handleGradeChange={handleGradeChange.bind(null, "4")} />
+            <CustomizedBox credit={credit[5]} grade={grade[5]} id="5" HandleCHChange={HandleCHChange.bind(null, "5")} handleGradeChange={handleGradeChange.bind(null, "5")} />
+            <CustomizedBox credit={credit[6]} grade={grade[6]} id="6" HandleCHChange={HandleCHChange.bind(null, "6")} handleGradeChange={handleGradeChange.bind(null, "6")} />
+            <CustomizedBox credit={credit[7]} grade={grade[7]} id="7" HandleCHChange={HandleCHChange.bind(null, "7")} handleGradeChange={handleGradeChange.bind(null, "7")} />
+            <CustomizedBox credit={credit[8]} grade={grade[8]} id="8" HandleCHChange={HandleCHChange.bind(null, "8")} handleGradeChange={handleGradeChange.bind(null, "8")} />
+            <CustomizedBox credit={credit[9]} grade={grade[9]} id="9" HandleCHChange={HandleCHChange.bind(null, "9")} handleGradeChange={handleGradeChange.bind(null, "9")} />
         </div >
     )
 }
@@ -203,15 +92,16 @@ const containerStyle = {
 const firstCol = {
     textAlign: "right",
     marginLeft: "3%",
-    marginTop: "1%"
+    marginTop: "2px"
 }
 
 const secondCol = {
     textAlign: "center",
+    marginTop: "18px"
 }
 
 const thirdCol = {
     marginLeft: "1%",
-    marginTop: "1%"
+    marginTop: "18px"
 }
 export default SGPA

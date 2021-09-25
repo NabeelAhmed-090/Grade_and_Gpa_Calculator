@@ -3,6 +3,7 @@ import SGPA from './components/SGPA';
 import CGPA from './components/CGPA';
 import Header from './components/Header';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Footer from './components/Footer';
 
 //  color: "#45a29e"
 const App = () => {
@@ -15,7 +16,9 @@ const App = () => {
         <Route path='/' component={Grade} exact />
         <Route path='/SGPA' component={SGPA} />
         <Route path='/CGPA' component={CGPA} />
+        <Footer />
       </main >
+
     </Router>
   );
 }
