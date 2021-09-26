@@ -4,6 +4,8 @@ import Grid from '@mui/material/Grid';
 import "../globalStyle.css"
 import { Link } from 'react-router-dom'
 import '../globalStyle.css'
+import Separator from './Separator';
+import Emoji from './Emoji';
 
 
 
@@ -42,14 +44,7 @@ const Header = () => {
                     </Grid>
                 </Grid>
             </Box>
-            <Box style={{ marginTop: "5%" }} sx={{ flexGrow: 1 }}>
-                <Grid container>
-                    <Grid item xs={2}></Grid>
-                    <Grid item xs={8}>
-                        <hr style={{ border: "0.25px solid #66fcf1" }} />
-                    </Grid>
-                </Grid>
-            </Box>
+            <Separator />
         </>
     )
 }

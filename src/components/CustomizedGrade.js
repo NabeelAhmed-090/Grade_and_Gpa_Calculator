@@ -30,7 +30,6 @@ const styles = {
         },
         borderBottom: "1px solid white",
         width: "12vh",
-        // boxShadow: "0 10px 6px -6px #181818"
         boxShadow: "0 6px 6px -6px #ccc"
 
     },

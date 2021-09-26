@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import { useState, useEffect } from 'react'
 import { Avatar } from '@mui/material';
 import CustomizedBox from './CustomizedBox'
+import { firstCol, containerStyle } from './Styles'
 
 const SGPA = () => {
     const [credit, setCredit] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
@@ -85,15 +86,6 @@ const avatarStyle_1 = {
     color: "#66fcf1",
     fontWeight: "700",
     margin: "auto"
-}
-const containerStyle = {
-    color: "white",
-}
-
-const firstCol = {
-    textAlign: "right",
-    marginLeft: "3%",
-    marginTop: "2px"
 }
 
 const secondCol = {

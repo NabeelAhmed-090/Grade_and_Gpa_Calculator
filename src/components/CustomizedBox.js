@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import CustomizedInputs from './CustomizedInputs';
 import CustomizedCH from './CutomizedCH'
 import CustomizedGrade from './CustomizedGrade'
+import { containerStyle } from './Styles'
 
 const CustomizedBox = (props) => {
     return (
@@ -27,25 +28,19 @@ const boxStyle = {
     marginTop: "3%"
 }
 
-const containerStyle = {
-    color: "white"
-}
-
 const firstCol = {
-    color: "white",
     textAlign: "right",
-    marginLeft: "3%",
-    marginTop: "2px",
+    marginLeft: "5%",
+    marginTop: "2px"
 }
 
 const secondCol = {
     color: "white",
     textAlign: "center",
-    marginTop: "18px"
+    marginTop: "18px",
 }
 
 const thirdCol = {
-    marginLeft: "1%",
     color: "white",
     marginTop: "18px"
 }

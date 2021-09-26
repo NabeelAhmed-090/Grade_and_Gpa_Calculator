@@ -36,7 +36,7 @@ const styles = {
     },
     input: {
         color: "white",
-        widht: "14vh",
+        // width: "20vh",
         boxShadow: "0 6px 6px -6px #ccc"
     }
 

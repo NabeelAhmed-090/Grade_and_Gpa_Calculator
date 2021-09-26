@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import { useState, useEffect } from 'react'
 import { Avatar } from '@mui/material';
 import CustomizedCgpaBox from './CustomizedCgpaBox';
+import { firstCol, containerStyle } from './Styles'
 
 
 const CGPA = () => {
@@ -54,12 +55,12 @@ const CGPA = () => {
     }
 
     return (
-        <div style={{ marginTop: "50px" }}>
+        <div style={divStyle}>
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container style={containerStyle}>
                     <Grid style={firstCol} item xs={3}></Grid>
                     <Grid style={secondCol} item xs={5}>
-                        <Avatar sx={avatarStyle_1}>{cgpa}</Avatar>
+                        <Avatar sx={avatarStyle}>{cgpa}</Avatar>
                     </Grid>
 
                 </Grid>
@@ -82,7 +83,7 @@ const CGPA = () => {
     )
 }
 
-const avatarStyle_1 = {
+const avatarStyle = {
     bgcolor: "white",
     padding: "1px",
     width: "65px",
@@ -93,18 +94,12 @@ const avatarStyle_1 = {
 }
 
 
-const containerStyle = {
-    color: "white",
-}
-
-const firstCol = {
-    textAlign: "right",
-    marginLeft: "3%",
-    marginTop: "2px"
-}
-
 const secondCol = {
     textAlign: "center",
+}
+
+const divStyle = {
+    marginTop: "50px"
 }
 
 export default CGPA

@@ -8,10 +8,9 @@
     font-family: 'Oswald', sans-serif;
 }
 
-.Activelink {
-    font-weight: 1000;
-}
-
-.nonActiveLinks {
-    font-weight: lighter;
+.firstCol {
+    text-align: right;
+    margin-left: 3%;
+    margin-top: 2px;
+    background-color: pink;
 }

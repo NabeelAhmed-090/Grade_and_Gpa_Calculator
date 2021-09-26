@@ -2,8 +2,9 @@ import React from 'react'
 const Footer = () => {
     return (
         <div style={footerStyle} >
-            <h3 style={fontStyle}>Grade and Gpa Calculator</h3>
-            <h4 style={fontStyle}>Nabeel Ahmed Fast-NU</h4>
+            <hr style={{ border: "0.25px solid #66fcf1", textAlign: "center" }} />
+            <h4 style={fontStyle}>Grade and Gpa Calculator</h4>
+            <h5 style={fontStyle}>Nabeel Ahmed FAST-NU</h5>
         </div>
     )
 }
@@ -13,12 +14,14 @@ const footerStyle = {
     textAlign: "center",
     backgroundColor: "#1f2833",
     color: "#66fcf1",
-    marginRight: "1%",
     minHeight: "100px",
 }
 
 const fontStyle = {
-    fontWeight: "100"
+    fontWeight: "100",
+    marginRight: "1%"
 }
 
 export default Footer
+
+

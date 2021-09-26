@@ -2,6 +2,7 @@ import React from 'react'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import CustomizedInputs from './CustomizedInputs';
+import { firstCol, containerStyle } from './Styles'
 
 const CustomizedCgpaBox = (props) => {
     return (
@@ -21,16 +22,6 @@ const CustomizedCgpaBox = (props) => {
 }
 const boxStyle = {
     marginTop: "3%"
-}
-
-const containerStyle = {
-    color: "white",
-}
-
-const firstCol = {
-    textAlign: "right",
-    marginLeft: "3%",
-    marginTop: "2px"
 }
 
 const thirdCol = {

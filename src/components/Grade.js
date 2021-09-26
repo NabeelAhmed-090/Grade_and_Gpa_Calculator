@@ -5,6 +5,9 @@ import CustomizedInputs from './CustomizedInputs';
 import { getGrade } from './function'
 import { Avatar } from '@mui/material';
 import { CircularProgress } from '@mui/material';
+import { containerStyle } from './Styles'
+import Separator from './Separator';
+import Emoji from './Emoji'
 
 
 const Grade = () => {
@@ -46,11 +49,11 @@ const Grade = () => {
     }
 
     return (
-        <div style={{ marginTop: "100px" }}>
+        <div style={divStyle}>
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container style={containerStyle}>
                     <Grid item xs={3}></Grid>
-                    <Grid style={{ textAlign: "center" }} item xs={6}>
+                    <Grid style={gridStyle} item xs={6}>
                         <CustomizedInputs value={average} onChange={handleOnChangeAverage} text="MCA (Rounded)" />
                     </Grid>
                 </Grid>
@@ -58,42 +61,43 @@ const Grade = () => {
             <Box style={rowStyle} sx={{ flexGrow: 1 }}>
                 <Grid container style={containerStyle}>
                     <Grid item xs={3}></Grid>
-                    <Grid style={{ textAlign: "center" }} item xs={6}>
+                    <Grid style={gridStyle} item xs={6}>
                         <CustomizedInputs value={score} onChange={handleOnChangeScore} text="Your Score" />
                     </Grid>
                 </Grid>
             </Box>
 
-            <Box style={{ marginTop: "100px" }} sx={{ flexGrow: 1 }}>
-                <Grid container style={containerStyle}>
-                    <Grid item xs={2}></Grid>
-                    <Grid item xs={8}>
-                        <hr style={{ border: "0.25px solid #66fcf1" }} />
-                    </Grid>
-                </Grid>
-            </Box>
+            <Separator />
 
             <Box style={{ marginTop: "60px", alignItems: "center" }} sx={{ flexGrow: 1 }}>
                 <Grid container style={containerStyle}>
                     <Grid item style={{ marginLeft: "4%" }} xs={3}></Grid>
                     <Grid item xs={5}>
-                        <Avatar sx={avatarStyle}>{grade[0] === '?' ? <CircularProgress /> : grade[0]}</Avatar>
+                        <Avatar sx={avatarStyle}>{grade[0] === '?' ? <Emoji symbol="😕" label="confused" /> : grade[0]}</Avatar>
                     </Grid>
                 </Grid>
             </Box>
             <Box style={{ marginTop: "60px", alignItems: "center" }} sx={{ flexGrow: 1 }}>
                 <Grid container style={containerStyle}>
                     <Grid className="Avatar" display="flex" alignItems="right" justifyContent="right" item xs={4}>
-                        <Avatar sx={avatarStyle_1}>{grade[2] === '?' ? <CircularProgress /> : grade[1]}</Avatar>
+                        <Avatar sx={avatarStyle_1}>{grade[2] === '?' ? <Emoji symbol="😕" label="confused" /> : grade[1]}</Avatar>
                     </Grid>
                     <Grid item xs={4}></Grid>
                     <Grid className="Avatar" display="flex" alignItems="left" justifyContent="left" item xs={4}>
-                        <Avatar sx={avatarStyle_1}>{grade[1] === '?' ? <CircularProgress /> : grade[2]}</Avatar>
+                        <Avatar sx={avatarStyle_1}>{grade[1] === '?' ? <Emoji symbol="😕" label="confused" /> : grade[2]}</Avatar>
                     </Grid>
                 </Grid>
             </Box>
         </div >
     )
+}
+
+const divStyle = {
+    marginTop: "80px"
+}
+
+const gridStyle = {
+    textAlign: "center"
 }
 
 const avatarStyle = {
@@ -117,9 +121,6 @@ const avatarStyle_1 = {
 
 const rowStyle = {
     marginTop: "7%"
-}
-const containerStyle = {
-    color: "white",
 }
 
 export default Grade
