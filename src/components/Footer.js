@@ -4,7 +4,7 @@ const Footer = () => {
         <div style={footerStyle} >
             <hr style={{ border: "0.25px solid #66fcf1", textAlign: "center" }} />
             <h4 style={fontStyle}>Grade and Gpa Calculator</h4>
-            <h5 style={fontStyle}>Nabeel Ahmed FAST-NU</h5>
+            <h5 style={fontStyle}>Nabeel Ahmed FAST-NUCES</h5>
         </div>
     )
 }

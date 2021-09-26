@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Footer from './components/Footer';
 import './globalStyle.css'
 
-//  color: "#45a29e"
 const App = () => {
   return (
     <Router>

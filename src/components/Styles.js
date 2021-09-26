@@ -4,7 +4,6 @@ export const firstCol = {
     marginTop: "2px"
 }
 
-
 export const containerStyle = {
     color: "white"
 }
