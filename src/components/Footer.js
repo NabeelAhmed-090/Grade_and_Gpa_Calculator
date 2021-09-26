@@ -23,5 +23,3 @@ const fontStyle = {
 }
 
 export default Footer
-
-

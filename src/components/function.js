@@ -160,6 +160,9 @@ const createData = () => {
 }
 
 const getLetter = (index) => {
+    if (index === 2) {
+        return 'F'
+    }
     if (index === 3) {
         return 'D'
     }
@@ -196,6 +199,7 @@ const getLetter = (index) => {
 }
 
 export const getGrade = (mca, score, setGrade) => {
+
     var check = false
     var s = Number(score)
     var ret = ['?', '?', '?']
@@ -206,7 +210,7 @@ export const getGrade = (mca, score, setGrade) => {
         setGrade(ret)
         return
     }
-    if (s < 30) {
+    if (s < 30 || s <= x[2]) {
         ret[0] = `F ${score}`
         ret[1] = "-"
         j = 3
@@ -236,11 +240,11 @@ export const getGrade = (mca, score, setGrade) => {
             if (Number(x[i]) === s) {
                 ret[0] = getLetter(i) + " " + score
                 if (i === 3) {
-                    ret[1] = "-"
+                    ret[1] = `F ${(Number(x[i] - 1))}`
                 }
                 else {
                     j = i - 1
-                    while (x[j] === '0') {
+                    while (x[j] === '0' && j > 2) {
                         j--
                     }
                     ret[1] = getLetter(j) + " " + (Number(x[i]) - 1)
