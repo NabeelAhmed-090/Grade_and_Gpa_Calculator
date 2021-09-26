@@ -218,7 +218,7 @@ export const getGrade = (mca, score, setGrade) => {
         return
     }
 
-    if (Number(x[2]) > s) {
+    if (Number(x[2]) >= s) {
         ret[1] = `F ${score}`
         ret[0] = "-"
         j = 3
@@ -243,7 +243,7 @@ export const getGrade = (mca, score, setGrade) => {
                     while (x[j] === '0') {
                         j--
                     }
-                    ret[1] = getLetter(j) + " " + x[j]
+                    ret[1] = getLetter(j) + " " + (Number(x[i]) - 1)
                 }
                 if (i === 13) {
                     ret[2] = "-"
@@ -268,7 +268,7 @@ export const getGrade = (mca, score, setGrade) => {
                 if (j === 2) {
                     ret[1] = `F ${x[2]}`
                 }
-                ret[1] = getLetter(j) + " " + x[j]
+                ret[1] = getLetter(j) + " " + (Number(x[i - 1]) - 1)
 
                 ret[2] = getLetter(i) + " " + x[i]
                 check = true

@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import "../globalStyle.css"
 import { Link } from 'react-router-dom'
 import '../globalStyle.css'
 import Separator from './Separator';
-import Emoji from './Emoji';
 
 
 

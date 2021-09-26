@@ -4,10 +4,10 @@ import Grid from '@mui/material/Grid';
 import CustomizedInputs from './CustomizedInputs';
 import { getGrade } from './function'
 import { Avatar } from '@mui/material';
-import { CircularProgress } from '@mui/material';
 import { containerStyle } from './Styles'
 import Separator from './Separator';
 import Emoji from './Emoji'
+import Instructions from './Instructions';
 
 
 const Grade = () => {
@@ -49,46 +49,49 @@ const Grade = () => {
     }
 
     return (
-        <div style={divStyle}>
-            <Box sx={{ flexGrow: 1 }}>
-                <Grid container style={containerStyle}>
-                    <Grid item xs={3}></Grid>
-                    <Grid style={gridStyle} item xs={6}>
-                        <CustomizedInputs value={average} onChange={handleOnChangeAverage} text="MCA (Rounded)" />
+        <>
+            <Instructions />
+            <div style={divStyle}>
+                <Box sx={{ flexGrow: 1 }}>
+                    <Grid container style={containerStyle}>
+                        <Grid item xs={3}></Grid>
+                        <Grid style={gridStyle} item xs={6}>
+                            <CustomizedInputs value={average} onChange={handleOnChangeAverage} text="MCA (Rounded)" />
+                        </Grid>
                     </Grid>
-                </Grid>
-            </Box>
-            <Box style={rowStyle} sx={{ flexGrow: 1 }}>
-                <Grid container style={containerStyle}>
-                    <Grid item xs={3}></Grid>
-                    <Grid style={gridStyle} item xs={6}>
-                        <CustomizedInputs value={score} onChange={handleOnChangeScore} text="Your Score" />
+                </Box>
+                <Box style={rowStyle} sx={{ flexGrow: 1 }}>
+                    <Grid container style={containerStyle}>
+                        <Grid item xs={3}></Grid>
+                        <Grid style={gridStyle} item xs={6}>
+                            <CustomizedInputs value={score} onChange={handleOnChangeScore} text="Your Score" />
+                        </Grid>
                     </Grid>
-                </Grid>
-            </Box>
+                </Box>
 
-            <Separator />
+                <Separator />
 
-            <Box style={{ marginTop: "60px", alignItems: "center" }} sx={{ flexGrow: 1 }}>
-                <Grid container style={containerStyle}>
-                    <Grid item style={{ marginLeft: "4%" }} xs={3}></Grid>
-                    <Grid item xs={5}>
-                        <Avatar sx={avatarStyle}>{grade[0] === '?' ? <Emoji symbol="😕" label="confused" /> : grade[0]}</Avatar>
+                <Box style={{ marginTop: "60px", alignItems: "center" }} sx={{ flexGrow: 1 }}>
+                    <Grid container style={containerStyle}>
+                        <Grid item style={{ marginLeft: "4%" }} xs={3}></Grid>
+                        <Grid item xs={5}>
+                            <Avatar sx={avatarStyle}>{grade[0] === '?' ? <Emoji symbol="😕" label="confused" /> : grade[0]}</Avatar>
+                        </Grid>
                     </Grid>
-                </Grid>
-            </Box>
-            <Box style={{ marginTop: "60px", alignItems: "center" }} sx={{ flexGrow: 1 }}>
-                <Grid container style={containerStyle}>
-                    <Grid className="Avatar" display="flex" alignItems="right" justifyContent="right" item xs={4}>
-                        <Avatar sx={avatarStyle_1}>{grade[2] === '?' ? <Emoji symbol="😕" label="confused" /> : grade[1]}</Avatar>
+                </Box>
+                <Box style={{ marginTop: "60px", alignItems: "center" }} sx={{ flexGrow: 1 }}>
+                    <Grid container style={containerStyle}>
+                        <Grid className="Avatar" display="flex" alignItems="right" justifyContent="right" item xs={4}>
+                            <Avatar sx={avatarStyle_1}>{grade[2] === '?' ? <Emoji symbol="😕" label="confused" /> : grade[1]}</Avatar>
+                        </Grid>
+                        <Grid item xs={4}></Grid>
+                        <Grid className="Avatar" display="flex" alignItems="left" justifyContent="left" item xs={4}>
+                            <Avatar sx={avatarStyle_1}>{grade[1] === '?' ? <Emoji symbol="😕" label="confused" /> : grade[2]}</Avatar>
+                        </Grid>
                     </Grid>
-                    <Grid item xs={4}></Grid>
-                    <Grid className="Avatar" display="flex" alignItems="left" justifyContent="left" item xs={4}>
-                        <Avatar sx={avatarStyle_1}>{grade[1] === '?' ? <Emoji symbol="😕" label="confused" /> : grade[2]}</Avatar>
-                    </Grid>
-                </Grid>
-            </Box>
-        </div >
+                </Box>
+            </div >
+        </>
     )
 }
 
@@ -104,8 +107,8 @@ const avatarStyle = {
     bgcolor: "white",
     margin: "auto",
     padding: "1px",
-    width: "65px",
-    height: "65px",
+    width: "80px",
+    height: "80px",
     color: "#66fcf1",
     fontWeight: "1000"
 }
@@ -113,8 +116,8 @@ const avatarStyle = {
 const avatarStyle_1 = {
     bgcolor: "white",
     padding: "1px",
-    width: "65px",
-    height: "65px",
+    width: "80px",
+    height: "80px",
     color: "#66fcf1",
     fontWeight: "700"
 }
