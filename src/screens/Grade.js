@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import CustomizedInputs from './CustomizedInputs';
-import { getGrade } from './function'
 import { Avatar } from '@mui/material';
-import { containerStyle } from './Styles'
-import Separator from './Separator';
-import Emoji from './Emoji'
-import Instructions from './Instructions';
+
+import { containerStyle } from '../components/Styles'
+import Separator from '../components/Separator';
+import Emoji from '../components/Emoji'
+import Instructions from '../components/Instructions';
+import CustomizedInputs from '../components/CustomizedInputs';
+import { getGrade } from '../components/function'
+
 
 
 const Grade = () => {

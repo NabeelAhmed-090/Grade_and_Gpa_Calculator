@@ -3,8 +3,9 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { useState, useEffect } from 'react'
 import { Avatar } from '@mui/material';
-import CustomizedCgpaBox from './CustomizedCgpaBox';
-import { firstCol, containerStyle } from './Styles'
+
+import { firstCol, containerStyle } from '../components/Styles'
+import CustomizedCgpaBox from '../components/CustomizedCgpaBox'
 
 
 const CGPA = () => {

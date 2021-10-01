@@ -1,6 +1,6 @@
-import Grade from './components/Grade';
-import SGPA from './components/SGPA';
-import CGPA from './components/CGPA';
+import Grade from './screens/Grade';
+import SGPA from './screens/SGPA';
+import CGPA from './screens/CGPA';
 import Header from './components/Header';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Footer from './components/Footer';

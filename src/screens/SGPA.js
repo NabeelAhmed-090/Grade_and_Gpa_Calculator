@@ -3,8 +3,9 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { useState, useEffect } from 'react'
 import { Avatar } from '@mui/material';
-import CustomizedBox from './CustomizedBox'
-import { firstCol, containerStyle } from './Styles'
+
+import CustomizedBox from '../components/CustomizedBox'
+import { firstCol, containerStyle } from '../components/Styles'
 
 const SGPA = () => {
     const [credit, setCredit] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
